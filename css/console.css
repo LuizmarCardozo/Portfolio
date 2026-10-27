@@ -87,3 +87,25 @@ button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .meta button:active { background: #000; }
 
 .hint { max-width: 420px; margin: 0; text-align: center; font-size: 8px; line-height: 1.8; color: #7d7ca8; }
+
+/* ---------- Mobile / toque ---------- */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  min-height: 100dvh;
+  touch-action: manipulation;        /* sem zoom por toque duplo nos botões */
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+button { touch-action: manipulation; }
+.hint { margin-top: 18px; }
+
+@media (pointer: coarse), (max-width: 480px) {
+  .console { width: min(94vw, 400px); padding: 20px 18px 32px; }
+  .dpad { grid-template: repeat(3, 46px) / repeat(3, 46px); }
+  .ab { gap: 16px; }
+  .ab button { width: 54px; height: 54px; font-size: 13px; }
+  .meta { margin-top: 30px; }
+  .meta button { font-size: 9px; padding: 12px 18px 11px; }
+  .hint { display: none; }
+}
