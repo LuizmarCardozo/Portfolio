@@ -1,0 +1,215 @@
+/* Paletas da tela (SELECT troca) */
+:root,
+[data-theme="lime"] {
+  --bg: #d4ff4d;
+  --ink: #10200a;
+  --mid: #8fc21a;
+}
+[data-theme="classic"] {
+  --bg: #9bbc0f;
+  --ink: #0f380f;
+  --mid: #6f9a0c;
+}
+[data-theme="amber"] {
+  --bg: #ffb000;
+  --ink: #2b1700;
+  --mid: #d17f00;
+}
+[data-theme="ice"] {
+  --bg: #cfe8ff;
+  --ink: #0b1b3a;
+  --mid: #7fb0e6;
+}
+
+.screen {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 10 / 9;
+  background: var(--bg);
+  color: var(--ink);
+  overflow: hidden;
+  border-radius: 3px;
+  image-rendering: pixelated;
+}
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 0 2px,
+    rgba(0, 0, 0, 0.07) 2px 3px
+  );
+}
+
+/* cqw só funciona em filhos do container (.screen), por isso o tamanho base fica aqui */
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4cqw 5cqw 3cqw;
+  font-size: 4cqw;
+  line-height: 1.5;
+}
+.page h1 {
+  margin: 0 0 3cqw;
+  font-size: 5.6cqw;
+  text-align: center;
+}
+.page h2 {
+  margin: 0 0 2cqw;
+  font-size: 4.6cqw;
+}
+.page p {
+  margin: 0 0 2.6cqw;
+}
+.foot {
+  margin-top: auto;
+  padding-top: 2cqw;
+  border-top: 0.6cqw solid var(--ink);
+  font-size: 3.2cqw;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Boot */
+.boot {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4cqw;
+}
+.boot .logo {
+  font-size: 11cqw;
+  font-style: italic;
+  line-height: 1;
+}
+.boot .logo span {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0 1.5cqw;
+}
+.boot .sub {
+  font-size: 3.6cqw;
+}
+.blink {
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Listas */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  padding: 0.8cqw 2cqw 0.8cqw 6cqw;
+  position: relative;
+  cursor: pointer;
+}
+.list li.sel {
+  background: var(--ink);
+  color: var(--bg);
+}
+.list li.sel::before {
+  content: "▶";
+  position: absolute;
+  left: 1.5cqw;
+  font-size: 3cqw;
+  top: 1.2cqw;
+}
+
+.detail {
+  margin-top: 2.5cqw;
+  padding: 2cqw;
+  border: 0.6cqw solid var(--ink);
+  font-size: 3.4cqw;
+  line-height: 1.6;
+}
+.tags {
+  margin-top: 1.5cqw;
+  display: flex;
+  gap: 1.5cqw;
+  flex-wrap: wrap;
+}
+.tags b {
+  background: var(--mid);
+  padding: 0 1.5cqw;
+  font-weight: normal;
+}
+
+/* Skills */
+.skill {
+  display: grid;
+  grid-template-columns: 26cqw 1fr;
+  align-items: center;
+  margin-bottom: 2cqw;
+  font-size: 3.6cqw;
+}
+.bar {
+  display: flex;
+  gap: 0.8cqw;
+}
+.bar i {
+  flex: 1;
+  height: 3.4cqw;
+  border: 0.5cqw solid var(--ink);
+}
+.bar i.on {
+  background: var(--ink);
+}
+
+/* Sobre */
+.about {
+  display: grid;
+  grid-template-columns: 24cqw 1fr;
+  gap: 3cqw;
+  align-items: start;
+}
+.avatar {
+  width: 24cqw;
+  height: 24cqw;
+  border: 0.8cqw solid var(--ink);
+  background: var(--mid);
+  display: grid;
+  place-items: center;
+  font-size: 8cqw;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about p {
+  font-size: 3.4cqw;
+  line-height: 1.6;
+}
+
+/* Jogo */
+.game {
+  align-items: center;
+}
+.game canvas {
+  width: 100%;
+  max-width: 78cqw;
+  border: 0.8cqw solid var(--ink);
+  background: var(--bg);
+}
+.score {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.4cqw;
+  margin-bottom: 1.5cqw;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink {
+    animation: none;
+  }
+}
