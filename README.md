@@ -1,9 +1,6 @@
 # Portfólio Retrô
 Portfólio de programador em formato de console portátil. Somente HTML, CSS e JavaScript, sem dependências.
 
-## Estrutura
-
-
 ## Como usar
 Abra `index.html` no navegador (ou rode `python -m http.server 8000`).
 
