@@ -31,7 +31,7 @@
   const screens = {
     boot: () => `
       <div class="page boot">
-        <div class="logo">PORT<span>FOLIO</span></div>
+        <div class="logo">LUIZ<span>MAR</span></div>
         <div class="sub">${esc(DATA.name)}<br>${esc(DATA.role)}</div>
         <div class="sub blink">PRESS START</div>
       </div>`,
