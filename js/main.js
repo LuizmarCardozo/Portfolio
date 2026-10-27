@@ -16,9 +16,14 @@
   const esc = s => String(s).replace(/[&<>"]/g, c =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  const list = (items, label) =>
-    `<ul class="list">${items.map((it, i) =>
-      `<li class="${i === state.index ? "sel" : ""}" data-i="${i}">${esc(label(it))}</li>`).join("")}</ul>`;
+  // max = quantos itens aparecem de uma vez (a lista rola com a seleção)
+  const list = (items, label, max = items.length) => {
+    const start = Math.max(0, Math.min(state.index - 1, items.length - max));
+    return `<ul class="list">${items.slice(start, start + max).map((it, k) => {
+      const i = start + k;
+      return `<li class="${i === state.index ? "sel" : ""}" data-i="${i}">${esc(label(it))}</li>`;
+    }).join("")}</ul>`;
+  };
 
   const foot = (left, right) => `<div class="foot"><span>${left}</span><span>${right}</span></div>`;
 
@@ -38,10 +43,10 @@
     projects: () => {
       const p = DATA.projects[state.index];
       return `<div class="page"><h1>PROJETOS</h1>
-        ${list(DATA.projects, x => x.name)}
+        ${list(DATA.projects, x => x.name, 4)}
         <div class="detail">${esc(p.desc)}
           <div class="tags">${p.stack.map(t => `<b>${esc(t)}</b>`).join("")}</div></div>
-        ${foot("A: ABRIR", "B: VOLTAR")}</div>`;
+        ${foot("A: ABRIR", `${state.index + 1}/${DATA.projects.length} · B: VOLTAR`)}</div>`;
     },
 
     about: () => `
@@ -164,4 +169,3 @@
   document.documentElement.dataset.theme = THEMES[0];
   render();
 })();
-                            
