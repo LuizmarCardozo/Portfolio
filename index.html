@@ -1,54 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfólio | Luizmar Cardozo</title>
-    <meta
-      name="description"
-      content="Portfólio de programador em formato de console retrô."
-    />
-    <link rel="stylesheet" href="css/console.css" />
-    <link rel="stylesheet" href="css/screen.css" />
-  </head>
-  <body>
-    <main class="console" aria-label="Console do portfólio">
-      <div class="bezel">
-        <div class="bezel-top">
-          <span class="led" aria-hidden="true"></span>BATERIA
-        </div>
-        <div class="screen" id="screen" aria-live="polite"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#22223a">
+  <title>Portfólio | Luizmar Cardozo</title>
+  <meta name="description" content="Portfólio de programador em formato de console retrô.">
+  <link rel="stylesheet" href="css/console.css">
+  <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+  <main class="console" aria-label="Console do portfólio">
+    <div class="bezel">
+      <div class="bezel-top"><span class="led" aria-hidden="true"></span>BATERIA</div>
+      <div class="screen" id="screen" aria-live="polite"></div>
+    </div>
+
+    <div class="brand">PORT<span>FOLIO</span></div>
+
+    <div class="controls">
+      <div class="dpad" role="group" aria-label="Direcional">
+        <button class="up" data-key="up" aria-label="Cima"></button>
+        <button class="left" data-key="left" aria-label="Esquerda"></button>
+        <button class="right" data-key="right" aria-label="Direita"></button>
+        <button class="down" data-key="down" aria-label="Baixo"></button>
       </div>
-
-      <div class="brand">Luiz<span>mar</span></div>
-
-      <div class="controls">
-        <div class="dpad" role="group" aria-label="Direcional">
-          <button class="up" data-key="up" aria-label="Cima"></button>
-          <button class="left" data-key="left" aria-label="Esquerda"></button>
-          <button class="right" data-key="right" aria-label="Direita"></button>
-          <button class="down" data-key="down" aria-label="Baixo"></button>
-        </div>
-        <div class="ab" role="group" aria-label="Ações">
-          <button data-key="b" aria-label="B (voltar)">B</button>
-          <button data-key="a" aria-label="A (confirmar)">A</button>
-        </div>
+      <div class="ab" role="group" aria-label="Ações">
+        <button data-key="b" aria-label="B (voltar)">B</button>
+        <button data-key="a" aria-label="A (confirmar)">A</button>
       </div>
+    </div>
 
-      <div class="meta">
-        <button data-key="select">SELECT</button>
-        <button data-key="start">START</button>
-      </div>
-    </main>
+    <div class="meta">
+      <button data-key="select">SELECT</button>
+      <button data-key="start">START</button>
+    </div>
+  </main>
 
-    <p class="hint">
-      Setas/WASD: mover · Enter ou Z: A · Esc ou X: B · Shift: tema · Espaço:
-      início · M: som
-    </p>
+  <p class="hint">Setas/WASD: mover · Enter ou Z: A · Esc ou X: B · Shift: tema · Espaço: início · M: som</p>
 
-    <script src="js/data.js"></script>
-    <script src="js/sound.js"></script>
-    <script src="js/snake.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/data.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
