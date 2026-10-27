@@ -34,7 +34,8 @@ body {
 }
 
 .console {
-  width: min(92vw, 380px);
+  width: 400px;                 /* tamanho base; js/fit.js ajusta a escala */
+  zoom: var(--s, 1);
   padding: 22px 22px 34px;
   background: var(--shell);
   border-radius: 14px 14px 72px 14px;
@@ -70,13 +71,12 @@ button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .dpad .down { grid-area: 3 / 2; border-radius: 0 0 4px 4px; }
 .dpad::before { content: ""; grid-area: 2 / 2; background: #121120; }
 
-.ab { display: flex; gap: 14px; transform: rotate(-22deg); padding: 10px 12px; border-radius: 40px; background: var(--shell-dark); }
+.ab { display: flex; align-items: center; gap: 14px; transform: rotate(-22deg); padding: 10px 12px; border-radius: 40px; background: var(--shell-dark); }
 .ab button {
   width: 46px; height: 46px; border-radius: 50%;
   background: var(--btn); color: #ffd6e2; font-size: 11px;
   box-shadow: inset -3px -3px 0 var(--btn-dark);
 }
-.ab button:nth-child(2) { margin-top: -14px; }
 .ab button:active { transform: translateY(2px); box-shadow: none; }
 
 .meta { display: flex; justify-content: center; gap: 22px; margin-top: 26px; transform: rotate(-22deg); }
@@ -100,11 +100,10 @@ body {
 button { touch-action: manipulation; }
 .hint { margin-top: 18px; }
 
-@media (pointer: coarse), (max-width: 480px) {
-  .console { width: min(94vw, 400px); padding: 20px 18px 32px; }
+@media (pointer: coarse) {
   .dpad { grid-template: repeat(3, 46px) / repeat(3, 46px); }
-  .ab { gap: 16px; }
-  .ab button { width: 54px; height: 54px; font-size: 13px; }
+  .ab { gap: 20px; padding: 12px 16px; }
+  .ab button { width: 56px; height: 56px; font-size: 13px; }
   .meta { margin-top: 30px; }
   .meta button { font-size: 9px; padding: 12px 18px 11px; }
   .hint { display: none; }
