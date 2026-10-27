@@ -1,5 +1,4 @@
-# Portfólio Retrô (DevBoy)
-
+# Portfólio Retrô
 Portfólio de programador em formato de console portátil. Somente HTML, CSS e JavaScript, sem dependências.
 
 ## Estrutura
