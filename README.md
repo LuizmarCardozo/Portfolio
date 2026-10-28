@@ -1,6 +1,6 @@
-# Portfólio Retrô
+# Portfólio_Luizmar_Dev
+
 ## https://portfolioluizmar.vercel.app/
-Portfólio de programador em formato de console portátil. Somente HTML, CSS e JavaScript, sem dependências.
 
 ## Como usar
 Abra `index.html` no navegador (ou rode `python -m http.server 8000`).
